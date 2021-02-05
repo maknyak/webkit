@@ -1,4 +1,4 @@
-import PropTypes from 'prop-types';
+import PropType from 'prop-types';
 import { card } from '@components/Card/style';
 
 /**
@@ -12,11 +12,11 @@ Card.propTypes = {
   /**
    * Card content
    */
-  children: PropTypes.node.isRequired,
+  children: PropType.node.isRequired,
   /**
    * Custom styling
    */
-  style: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
+  style: PropType.oneOfType([PropType.object, PropType.string]),
 };
 
 Card.defaultProps = {
