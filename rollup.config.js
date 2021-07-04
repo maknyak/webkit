@@ -8,7 +8,7 @@ import analyze from 'rollup-plugin-analyzer';
 // import { terser } from 'rollup-plugin-terser';
 
 export default {
-  input: ['./src/components/Box/index.js'],
+  input: ['./src/index.js', './src/components/Box/index.js'],
   output: [
     {
       dir: 'dist/components',
