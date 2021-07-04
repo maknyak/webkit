@@ -8,23 +8,24 @@ import analyze from 'rollup-plugin-analyzer';
 import { terser } from 'rollup-plugin-terser';
 
 export default {
-  input: ['./src/components/Box/index.js'],
+  input: ['./src/components/Box/index.js', './src/components/Card/index.js'],
   output: [
     {
-      dir: 'core',
+      dir: 'dist/components',
       format: 'cjs',
       exports: 'named',
       sourcemap: false,
     },
   ],
   preserveModules: true,
-  external: ['react', 'react-dom', 'prop-types', 'styled-components'],
   plugins: [
     alias({
       entries: [{ find: '@components', replacement: './src/components' }],
     }),
-    del({ targets: '@components/*', hook: 'buildStart', verbose: false }),
-    peerDepsExternal(),
+    del({ targets: 'dist/*', hook: 'buildStart', verbose: false }),
+    peerDepsExternal({
+      includeDependencies: true,
+    }),
     commonjs(),
     babel({
       babelHelpers: 'runtime',

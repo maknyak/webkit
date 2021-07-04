@@ -1,23 +1,32 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import BoxStyled from '@components/Box/Box.styled';
+import styled from 'styled-components';
+import {
+  space,
+  color,
+  typography,
+  layout,
+  flexbox,
+  grid,
+  background,
+  border,
+  position,
+  shadow,
+  textStyle,
+  system,
+} from 'styled-system';
 
-const Box = React.forwardRef(({ children, tag, ...props }, ref) => (
-  <>
-    <BoxStyled as={tag} {...props} ref={ref}>
-      {children}
-    </BoxStyled>
-  </>
-));
+const BoxStyled = styled.div(
+  space,
+  color,
+  typography,
+  layout,
+  flexbox,
+  grid,
+  background,
+  border,
+  position,
+  shadow,
+  textStyle,
+  system((props) => props.system)
+);
 
-Box.propTypes = {
-  children: PropTypes.node,
-  tag: PropTypes.string,
-};
-
-Box.defaultProps = {
-  children: '',
-  tag: 'div',
-};
-
-export default Box;
+export default BoxStyled;
