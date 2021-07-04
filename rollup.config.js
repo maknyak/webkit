@@ -5,19 +5,26 @@ import alias from '@rollup/plugin-alias';
 import peerDepsExternal from 'rollup-plugin-peer-deps-external';
 import del from 'rollup-plugin-delete';
 import analyze from 'rollup-plugin-analyzer';
-import { terser } from 'rollup-plugin-terser';
+// import { terser } from 'rollup-plugin-terser';
 
 export default {
-  input: ['./src/components/Box/index.js', './src/components/Card/index.js'],
+  input: ['./src/components/Box/index.js'],
   output: [
     {
       dir: 'dist/components',
-      format: 'cjs',
+      format: 'es',
       exports: 'named',
       sourcemap: false,
     },
   ],
   preserveModules: true,
+  external: [
+    'react',
+    'react-dom',
+    'prop-types',
+    /@babel\/runtime/,
+    '@babel/runtime',
+  ],
   plugins: [
     alias({
       entries: [{ find: '@components', replacement: './src/components' }],
@@ -33,7 +40,7 @@ export default {
       extensions: ['.js', '.jsx'],
     }),
     resolve({ extensions: ['.js', '.jsx'] }),
-    terser(),
+    // terser(),
     analyze(),
   ],
 };
