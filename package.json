@@ -28,7 +28,8 @@
   "homepage": "https://github.com/maknyak/webkit#readme",
   "dependencies": {
     "prop-types": "^15.7.2",
-    "styled-components": "^5.2.1"
+    "styled-components": "^5.2.1",
+    "styled-system": "^5.1.5"
   },
   "peerDependencies": {
     "react": ">=17.0.0",
@@ -43,11 +44,11 @@
     "@rollup/plugin-babel": "^5.2.3",
     "@rollup/plugin-commonjs": "^17.1.0",
     "@rollup/plugin-node-resolve": "^11.1.1",
-    "@storybook/addon-actions": "^6.1.16",
-    "@storybook/addon-essentials": "^6.1.16",
-    "@storybook/addon-links": "^6.1.16",
-    "@storybook/addon-storyshots": "^6.1.16",
-    "@storybook/react": "^6.1.16",
+    "@storybook/addon-actions": "^6.3.2",
+    "@storybook/addon-essentials": "^6.3.2",
+    "@storybook/addon-links": "^6.3.2",
+    "@storybook/addon-storyshots": "^6.3.2",
+    "@storybook/react": "^6.3.2",
     "@testing-library/jest-dom": "^5.11.9",
     "@testing-library/react": "^11.2.5",
     "babel-loader": "^8.2.2",

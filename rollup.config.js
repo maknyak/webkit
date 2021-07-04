@@ -8,7 +8,7 @@ import analyze from 'rollup-plugin-analyzer';
 import { terser } from 'rollup-plugin-terser';
 
 export default {
-  input: ['./src/Card/index.js', './src/Button/index.js'],
+  input: ['./src/components/Box/index.js'],
   output: [
     {
       dir: 'core',
@@ -21,9 +21,9 @@ export default {
   external: ['react', 'react-dom', 'prop-types', 'styled-components'],
   plugins: [
     alias({
-      entries: [{ find: '@components', replacement: './src' }],
+      entries: [{ find: '@components', replacement: './src/components' }],
     }),
-    del({ targets: 'core/*', hook: 'buildStart', verbose: false }),
+    del({ targets: '@components/*', hook: 'buildStart', verbose: false }),
     peerDepsExternal(),
     commonjs(),
     babel({
