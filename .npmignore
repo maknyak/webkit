@@ -1,0 +1,16 @@
+# folder
+/.storybook
+/node_modules
+/src
+
+# files
+.DS_Store
+.babelrc
+.browserslistrc
+.editorconfig
+.eslintignore
+.eslintrc.js
+.git
+.gitignore
+.npmrc
+rollup*

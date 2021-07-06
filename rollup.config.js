@@ -5,16 +5,16 @@ import alias from '@rollup/plugin-alias';
 import peerDepsExternal from 'rollup-plugin-peer-deps-external';
 import del from 'rollup-plugin-delete';
 import analyze from 'rollup-plugin-analyzer';
-// import { terser } from 'rollup-plugin-terser';
+import { terser } from 'rollup-plugin-terser';
 
 export default {
-  input: ['./src/index.js', './src/components/Box/index.js'],
+  input: ['./src/components/index.js'],
   output: [
     {
-      dir: 'dist/components',
+      dir: 'components',
       format: 'es',
       exports: 'named',
-      sourcemap: false,
+      sourcemap: true,
     },
   ],
   preserveModules: true,
@@ -29,7 +29,7 @@ export default {
     alias({
       entries: [{ find: '@components', replacement: './src/components' }],
     }),
-    del({ targets: 'dist/*', hook: 'buildStart', verbose: false }),
+    del({ targets: 'components/*', hook: 'buildStart', verbose: false }),
     peerDepsExternal({
       includeDependencies: true,
     }),
@@ -40,7 +40,7 @@ export default {
       extensions: ['.js', '.jsx'],
     }),
     resolve({ extensions: ['.js', '.jsx'] }),
-    // terser(),
+    terser(),
     analyze(),
   ],
 };

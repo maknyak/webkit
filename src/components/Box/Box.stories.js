@@ -12,5 +12,4 @@ box.args = {
   color: 'black',
   backgroundColor: 'white',
   border: '1px solid blue',
-  ref: 'ref',
 };

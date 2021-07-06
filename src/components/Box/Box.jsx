@@ -1,6 +1,6 @@
 import { forwardRef } from 'react';
 import PropTypes from 'prop-types';
-import BoxStyled from './Box/Box.styled';
+import BoxStyled from './Box.styled';
 
 const Box = forwardRef(({ children, tag, ...props }, ref) => (
   <>

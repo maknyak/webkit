@@ -1,8 +1,11 @@
 {
-  "name": "webkit",
+  "name": "@maknyak/webkit",
   "version": "1.0.0",
   "description": "Web ui for react",
-  "main": "dist/index.js",
+  "module": "components/index.js",
+  "files": [
+    "components"
+  ],
   "scripts": {
     "build-storybook": "build-storybook",
     "build": "rollup -c",
@@ -20,8 +23,11 @@
     "react",
     "ui"
   ],
-  "author": "Ian Maulana",
-  "license": "ISC",
+  "author": {
+    "name": "Ian Maulana",
+    "email": "ian_maulana@yahoo.com"
+  },
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/maknyak/webkit/issues"
   },
